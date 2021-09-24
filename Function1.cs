@@ -26,57 +26,11 @@ namespace FuncForDennis
 
             System.ServiceModel.BasicHttpBinding httpThingy = new System.ServiceModel.BasicHttpBinding();
 
-            //log.LogInformation(httpThingy);
+            string forLog = httpThingy.ToString();
 
-            //public EZLynxVINSoapClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
-            //    base(EZLynxVINSoapClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
-            //{
-            //    this.Endpoint.Name = endpointConfiguration.ToString();
-            //    ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
-            //}
+            log.LogInformation("logging the object to show it got made" + forLog);
 
-
-            //public VINService(IConfiguration azureAppConfiguration)
-
-            //{
-
-            //    _configuration = azureAppConfiguration;
-
-            //    _ratingSettings = azureAppConfiguration.GetSection(RatingSettings.SectionName).Get<RatingSettings>();
-
-            //    _soapClient = new EZLynxVINSoapClient(EZLynxVINSoapClient.EndpointConfiguration.EZLynxVINSoap, _ratingSettings.EZLynxVinServiceBaseURL);
-
-            //    _authHeader = new AuthenticationHeader() { Username = _ratingSettings.EZLynxUsername, Password = _ratingSettings.EZLynxPassword };
-
-            //}
-
-
-
-            //public async Task<List<YearDTO>> GetVehicleYears()
-
-            //{
-
-
-
-            //    var years = await _soapClient.getAutoYearsAsync(_authHeader);
-
-
-
-            //    var pairs = years.getAutoYearsResult.Select(x => new YearDTO()
-
-            //    {
-
-            //        Year = int.Parse(x),
-
-            //        YearDisplay = x.ToString()
-
-            //    }).OrderByDescending(z => z.Year).ToList();
-
-
-
-            //    return pairs;
-
-            //}
+            
 
             return name != null
                 ? (ActionResult)new OkObjectResult($"Hello, {name}")
