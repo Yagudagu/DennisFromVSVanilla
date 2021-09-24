@@ -14,13 +14,13 @@ steps:
   displayName: 'dotnet build'
   inputs:
     projects: '**/*.csproj'
-    arguments: '--output publish_output --configuration Release'
+    arguments: '--output $(System.DefaultWorkingDirectory)/publish_output --configuration Release'
     
  
 - task: ArchiveFiles@2
   displayName: 'Archive FIles'
   inputs:
-    rootFolderOrFile: 'publish_output/'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/publish_output/'
     includeRootFolder: false
  
 - task: PublishBuildArtifacts@1
