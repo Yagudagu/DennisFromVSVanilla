@@ -29,7 +29,7 @@ steps:
     archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
     replaceExistingArchive: true
  
-- publish: $(Build.ArtifactStagingDirectory)/drop/$(Build.BuildId).zip
+- publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
   artifact: drop
  
 #  - task: PublishBuildArtifacts@1
@@ -40,5 +40,6 @@ steps:
     azureSubscription: 'JacMar service principal'
     appType: 'functionApp'
     appName: 'jacmarDevOpsCs'
-    package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+    package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    # package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
     deploymentMethod: 'auto'
