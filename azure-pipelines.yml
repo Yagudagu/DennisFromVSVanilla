@@ -6,6 +6,9 @@
 trigger:
 - master
 
+variables:
+  workingDirectory: '$(System.DefaultWorkingDirectory)/'
+
 pool:
   vmImage: ubuntu-latest
 
