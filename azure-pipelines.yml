@@ -16,7 +16,7 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
-    projects: '**/*.csproj'
+    projects: '$(System.DefaultWorkingDirectory)/*.csproj'
     arguments: '--output $(System.DefaultWorkingDirectory)/publish_output --configuration Release'
     
  
@@ -40,5 +40,5 @@ steps:
     azureSubscription: 'JacMar service principal'
     appType: 'functionApp'
     appName: 'jacmarDevOpsCs'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
     deploymentMethod: 'auto'
