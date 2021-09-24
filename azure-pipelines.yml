@@ -23,8 +23,11 @@ steps:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)/publish_output/'
     includeRootFolder: false
  
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
+ - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      artifact: drop
+ 
+#  - task: PublishBuildArtifacts@1
+#   displayName: 'Publish Artifact: drop'
 
 - task: AzureFunctionApp@1
   inputs:
