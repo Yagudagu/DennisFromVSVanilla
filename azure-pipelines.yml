@@ -10,7 +10,7 @@ variables:
   workingDirectory: '$(System.DefaultWorkingDirectory)/'
 
 pool:
-  vmImage: Default
+  vmImage: Ubuntu latest
 
 steps:
 - task: DotNetCoreCLI@2
