@@ -25,15 +25,15 @@ steps:
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)/publish_output/'
     includeRootFolder: false
-    archiveType: zip
-    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-    replaceExistingArchive: true
+    # archiveType: zip
+    # archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    # replaceExistingArchive: true
  
-- publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-  artifact: drop
+# - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+#   artifact: drop
  
-#  - task: PublishBuildArtifacts@1
-#   displayName: 'Publish Artifact: drop'
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
 
 - task: AzureFunctionApp@1
   inputs:
