@@ -42,5 +42,5 @@ steps:
     appName: 'jacmarDevOpsCs'
     package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
     # package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-    deploymentMethod: 'auto'
+    deploymentMethod: 'zipdeploy'
     
