@@ -35,12 +35,12 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
 
-# - task: AzureFunctionApp@1
-#   inputs:
-#     azureSubscription: 'JacMar service principal'
-#     appType: 'functionApp'
-#     appName: 'jacmarDevOpsCs'
-#     package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-#     # package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-#     deploymentMethod: 'auto'
+- task: AzureFunctionApp@1
+  inputs:
+    azureSubscription: 'JacMar service principal'
+    appType: 'functionApp'
+    appName: 'jacmarDevOpsCs'
+    package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    # package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+    deploymentMethod: 'auto'
     
