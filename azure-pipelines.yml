@@ -39,7 +39,7 @@ steps:
   inputs:
     azureSubscription: 'JacMar service principal'
     appType: 'functionApp'
-    appName: 'jacmarNathan'
+    appName: 'jacmarapparm/stage'
     package: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
     # package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
     deploymentMethod: 'auto'
